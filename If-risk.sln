@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "If_risk", "If-risk\If_risk.csproj", "{18896670-106B-46FC-8864-BAF99846FB45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskTests", "RiskTests\RiskTests.csproj", "{74990726-07DA-4B75-A1B0-551A1399567D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{18896670-106B-46FC-8864-BAF99846FB45} = {18896670-106B-46FC-8864-BAF99846FB45}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18896670-106B-46FC-8864-BAF99846FB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18896670-106B-46FC-8864-BAF99846FB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18896670-106B-46FC-8864-BAF99846FB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18896670-106B-46FC-8864-BAF99846FB45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74990726-07DA-4B75-A1B0-551A1399567D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74990726-07DA-4B75-A1B0-551A1399567D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74990726-07DA-4B75-A1B0-551A1399567D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74990726-07DA-4B75-A1B0-551A1399567D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE61D5CA-2767-49DA-94A2-281E68FC6304}
+	EndGlobalSection
+EndGlobal
