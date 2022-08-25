@@ -14,5 +14,17 @@ namespace RiskTests
         {
             TestRisk = new Risk(_name,_yearlyPrice);
         }
+
+        [Fact]
+        public void ShouldBeAbleToGetRiskName()
+        {
+            Assert.Equal("Fire", TestRisk.Name);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToGetRiskYearlyPrice()
+        {
+            Assert.Equal(100, TestRisk.YearlyPrice);
+        }
     }
 }
