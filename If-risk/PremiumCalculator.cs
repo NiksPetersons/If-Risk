@@ -1,4 +1,5 @@
-﻿using System;
+﻿using If_risk.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace If_risk
             decimal totalMonthlyPremium = totalYearlyPremium / 12;
             int policyDurationInMonths = (validTill.Year - validFrom.Year) * 12 + (validTill.Month - validFrom.Month);
             decimal premiumForTotalDuration = policyDurationInMonths * totalMonthlyPremium;
-            return Math.Round(premiumForTotalDuration);
+            return Math.Ceiling(premiumForTotalDuration);
         }
     }
 }

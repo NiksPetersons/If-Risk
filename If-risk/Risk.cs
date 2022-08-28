@@ -16,5 +16,10 @@
             Name = name; 
             YearlyPrice = yearlyPrice;
         }
+
+        public override string ToString()
+        {
+            return $"Risk: {Name}, Yearly Rate: {YearlyPrice}€";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using If_risk;
+﻿using FluentAssertions;
+using If_risk;
 using Xunit;
 
 namespace RiskTests
@@ -8,7 +9,6 @@ namespace RiskTests
         private string _name = "Fire";
         private decimal _yearlyPrice = 100;
         private Risk TestRisk;
-        //public Risk TestRisk = new Risk("Fire", 100);
 
         public Risk_Tests()
         {
@@ -16,15 +16,10 @@ namespace RiskTests
         }
 
         [Fact]
-        public void ShouldBeAbleToGetRiskName()
+        public void Risk_RiskCreation_ShouldBeAbleToGetParameters()
         {
-            Assert.Equal("Fire", TestRisk.Name);
-        }
-
-        [Fact]
-        public void ShouldBeAbleToGetRiskYearlyPrice()
-        {
-            Assert.Equal(100, TestRisk.YearlyPrice);
+            TestRisk.Name.Should().Be(_name);
+            TestRisk.YearlyPrice.Should().Be(_yearlyPrice);
         }
     }
 }
