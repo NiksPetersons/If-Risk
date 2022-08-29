@@ -140,5 +140,21 @@ namespace RiskTests
             _sut.PolicyList[0].InsuredRisks.Count.Should().Be(3);
             _sut.PolicyList[0].Premium.Should().Be(113);
         }
+
+        [Fact]
+        public void InsuranceCompany_AddSupportedRisk_ShouldThrowInvalidRiskException()
+        {
+            Action action = () => _sut.AddSupportedRisk("Storm", 75);
+            action.Should().Throw<InvalidRisksException>().WithMessage("Risk with given name is already supported");
+        }
+
+        [Fact]
+        public void InsuranceCompany_AddSupportedRisk_ShouldBeAbleToAddSupportedRiskSuccessfully()
+        {
+            Action action = () => _sut.AddSupportedRisk("Sharknado", 250);
+            action.Should().NotThrow();
+            _sut.AvailableRisks.Count.Should().Be(4);
+            _sut.AvailableRisks[3].Name.Should().Be("Sharknado");
+        }
     }
 }

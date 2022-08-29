@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace If_risk
 {
@@ -83,6 +84,18 @@ namespace If_risk
 
             return PolicyList.First(x => x.NameOfInsuredObject == nameOfInsuredObject
                                           && x.ValidFrom == effectiveDate);
+        }
+
+        public Risk AddSupportedRisk(string name, decimal yearlyPrice)
+        {
+            if (AvailableRisks.Any(x => x.Name == name))
+            {
+                throw new InvalidRisksException("Risk with given name is already supported");
+            }
+
+            Risk newRisk = new Risk(name, yearlyPrice);
+            AvailableRisks.Add(newRisk);
+            return newRisk;
         }
 
         public string GetAvailableRisks()
